@@ -10,5 +10,3 @@ def hello_world():       #define a function
 
 if __name__ == "__main__":
     app.run()
-
-    
