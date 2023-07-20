@@ -1,4 +1,5 @@
    #it is database toolkit for python
+import sqlalchemy
 from sqlalchemy import create_engine, text
 
 db_connection_string = "mysql+pymysql://b8hzsy719wb6vqh4pzy6:pscale_pw_wNE7APtD1oCL0RdMXegJEdxJuHpl5qqEWPA48b1pnA0@aws.connect.psdb.cloud/yourscareer?charset=utf8mb4"
