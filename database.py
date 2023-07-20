@@ -1,8 +1,8 @@
    #it is database toolkit for python
-import sqlalchemy
+# import sqlalchemy
 from sqlalchemy import create_engine, text
 
-db_connection_string = "mysql+pymysql://b8hzsy719wb6vqh4pzy6:pscale_pw_wNE7APtD1oCL0RdMXegJEdxJuHpl5qqEWPA48b1pnA0@aws.connect.psdb.cloud/yourscareer?charset=utf8mb4"
+db_connection_string = "mysql+pymysql://d5fi33vnr19jzm91wntp:pscale_pw_2vbD904IUP8XgvxjtkFVMCXUnjxLdA61byXy8WJip1v@aws.connect.psdb.cloud/yourscareer?charset=utf8mb4"
 
 engine = create_engine(
     db_connection_string, 
@@ -10,7 +10,8 @@ engine = create_engine(
         "ssl" : {
             "ssl_ca": "/etc/ssl/cert.pem"
         }
-    })
+    }
+)
 
 # with engine.connect() as conn:
 #     result = conn.execute(text("select * from jobs"))
