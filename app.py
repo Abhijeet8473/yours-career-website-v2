@@ -1,6 +1,6 @@
 from flask import Flask,render_template, jsonify
 from database import engine
-from sqlalchemy import create_engine, text
+# from sqlalchemy import  text
 
 # app is the object of python
 
@@ -33,18 +33,18 @@ JOBS = [
     }
 ]
 
-def load_jobs_from_db():
-    with engine.connect() as conn:
-        result = conn.execute(text("select * from jobs"))
+# def load_jobs_from_db():
+#     with engine.connect() as conn:
+#         result = conn.execute(text("select * from jobs"))
 
-        jobs = []
-        for row in result.all():
-            jobs.append(row._asdict())
-        return jobs
+#         jobs = []
+#         for row in result.all():
+#             jobs.append(row._asdict())
+#         return jobs
 
 @app.route("/")
 def hello_world():       #define a function
-    jobs = load_jobs_from_db()
+    # jobs = load_jobs_from_db()
     return render_template('home.html',
                            jobs=JOBS,
                            company_name='Career')
