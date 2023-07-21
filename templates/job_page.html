@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <titl>{{job.title}} Career.com</titl>
+    {% include 'bootstrap.html' %}
+    <!-- <style>
+        #banner {
+            height: 360px;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+    </style> -->
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    <div class="container">
+        <!-- <img class="img-fluid" id="banner" src=" ../static/banner.jpeg.jpg "> -->
+        {% include 'banner.html' %}
+        <h2 class="text-center mt-2 mb-4">Career.com</h2>
+        <h3>Title</h3>
+        <p>{{job.title}}</p>
+        <h3>Location</h3>
+        <p>{{job.location}}</p>
+        <h3>Responsibilities</h3>
+        <ul>
+            {% for line in job.responsibilities.split(". ") %} {# Include the period and a space after it in the splitting operation #} {% if line.strip() %} {# Add a conditional check to exclude empty lines #}
+            <li>{{ line }}</li>
+            {% endif %} {% endfor %}
+        </ul>
+        <h3>Requirements</h3>
+        <ol>
+            {% for line in job.requirements.split("\n") %} {# Include the period and a space after it in the splitting operation #} {% if line.strip() %} {# Add a conditional check to exclude empty lines #}
+            <li>{{ line }}</li>
+            {% endif %} {% endfor %}
+        </ol>
+        <h3>Salary</h3>
+        <p>{{job.currency}}{{job.salary}}</p>
+        {% include 'application_form.html' %}
+    </div>
+    {% include 'footer.html' %}
+</body>
+
+</html>

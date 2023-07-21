@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Application Form Submitted </title>
+    {% include 'bootstrap.html' %}
+    <!-- <style>
+        #banner {
+            height: 360px;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+    </style> -->
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    <div class="container">
+        {% include 'banner.html' %}
+        <!-- <img class="img-fluid" id="banner" src="../static/banner.jpeg.jpg"> -->
+        <h2 class="text-center mt-2 mb-4">Career.com</h2>
+        <p>Your Application for "{{job['title']}}" has been successfully submited</p>
+
+        <b>Name </b>
+        <div class="mb-2">{{application['full_name']}}</div>
+
+        <b>Email </b>
+        <div class="mb-2">{{application['email']}}</div>
+
+        <b>LinkedIn URL</b>
+        <div class="mb-2">{{application['linkedin_url']}}</div>
+
+        <b>Education</b>
+        <div class="mb-2">{{application['education']}}</div>
+
+        <b> Work Experience</b>
+        <div class="mb-2">{{application['work_Experience']}}</div>
+
+        <b> Resume URL</b>
+        <div class="mb-2">{{application['resume_url']}}</div>
+
+        {% include 'footer.html' %}
+    </div>
+</body>
+
+</html>
